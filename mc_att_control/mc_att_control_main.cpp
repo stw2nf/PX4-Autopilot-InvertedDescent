@@ -94,11 +94,11 @@ MulticopterAttitudeControl::parameters_updated()
 	    !_v_control_mode.flag_control_velocity_enabled &&
 	    !_v_control_mode.flag_control_position_enabled) {
 			
-		// Store some of the parameters in a more convenient way & precompute often-used values
-		_attitude_control.setProportionalGain(Vector3f(_param_mc_inv_roll_p.get(), _param_mc_inv_pitch_p.get(), _param_mc_yaw_p.get()),
+		// Store inverted flight parameters in a more convenient way & precompute often-used values
+		_attitude_control.setProportionalGain(Vector3f(_param_mc_inv_roll_p.get(), _param_mc_inv_pitch_p.get(), _param_mc_inv_yaw_p.get()),
 					      _param_mc_yaw_weight.get());	
 	} else {
-		// Store some of the parameters in a more convenient way & precompute often-used values
+		// Store normal flight parameters in a more convenient way & precompute often-used values
 		_attitude_control.setProportionalGain(Vector3f(_param_mc_roll_p.get(), _param_mc_pitch_p.get(), _param_mc_yaw_p.get()),
 					      _param_mc_yaw_weight.get());
 		}

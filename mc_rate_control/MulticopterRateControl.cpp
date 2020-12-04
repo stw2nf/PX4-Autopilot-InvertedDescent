@@ -85,9 +85,9 @@ MulticopterRateControl::parameters_updated()
 			
 		// Store some of the parameters in a more convenient way & precompute often-used values
 		_rate_control.setGains(
-			rate_k.emult(Vector3f(_param_inv_rollrate_p.get(), 			_param_inv_pitchrate_p.get(), _param_mc_yawrate_p.get())),
-		rate_k.emult(Vector3f(_param_inv_rollrate_i.get(), _param_inv_pitchrate_i.get(), _param_mc_yawrate_i.get())),
-		rate_k.emult(Vector3f(_param_inv_rollrate_d.get(), _param_inv_pitchrate_d.get(), _param_mc_yawrate_d.get())));
+			rate_k.emult(Vector3f(_param_inv_rollrate_p.get(), 			_param_inv_pitchrate_p.get(), _param_inv_yawrate_p.get())),
+		rate_k.emult(Vector3f(_param_inv_rollrate_i.get(), _param_inv_pitchrate_i.get(), _param_inv_yawrate_i.get())),
+		rate_k.emult(Vector3f(_param_inv_rollrate_d.get(), _param_inv_pitchrate_d.get(), _param_inv_yawrate_d.get())));
 	} else {
 	_rate_control.setGains(
 		rate_k.emult(Vector3f(_param_mc_rollrate_p.get(), _param_mc_pitchrate_p.get(), _param_mc_yawrate_p.get())),

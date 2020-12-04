@@ -399,7 +399,7 @@ PARAM_DEFINE_INT32(MC_BAT_SCALE_EN, 0);
 /**
  * Inverted Pitch rate P gain
  *
- * Pitch rate proportional gain, i.e. control output for angular speed error 1 rad/s.
+ * Inverted Pitch rate proportional gain, i.e. control output for angular speed error 1 rad/s.
  *
  * @min 0.01
  * @max 0.6
@@ -408,19 +408,6 @@ PARAM_DEFINE_INT32(MC_BAT_SCALE_EN, 0);
  * @group Multicopter Rate Control
  */
 
-/////////////// New Inverted Parameters ///////////////
-
-/**
- * Inverted Pitch rate P gain
- *
- * Pitch rate proportional gain, i.e. control output for angular speed error 1 rad/s.
- *
- * @min 0.01
- * @max 0.6
- * @decimal 3
- * @increment 0.01
- * @group Multicopter Rate Control
- */
 PARAM_DEFINE_FLOAT(INV_PITCHRATE_P, 0.15f);
 
 /**
@@ -450,7 +437,7 @@ PARAM_DEFINE_FLOAT(INV_PITCHRATE_D, 0.003f);
 /**
  * Inverted Roll rate P gain
  *
- * Roll rate proportional gain, i.e. control output for angular speed error 1 rad/s.
+ * Inverted Roll rate proportional gain, i.e. control output for angular speed error 1 rad/s.
  *
  * @min 0.01
  * @max 0.5
@@ -463,7 +450,7 @@ PARAM_DEFINE_FLOAT(INV_ROLLRATE_P, 0.15f);
 /**
  * Inverted Roll rate I gain
  *
- * Roll rate integral gain. Can be set to compensate static thrust difference or gravity center offset.
+ * Inverted Roll rate integral gain. Can be set to compensate static thrust difference or gravity center offset.
  *
  * @min 0.0
  * @decimal 3
@@ -475,7 +462,7 @@ PARAM_DEFINE_FLOAT(INV_ROLLRATE_I, 0.2f);
 /**
  * Inverted Roll rate D gain
  *
- * Roll rate differential gain. Small values help reduce fast oscillations. If value is too big oscillations will appear again.
+ * Inverted Roll rate differential gain. Small values help reduce fast oscillations. If value is too big oscillations will appear again.
  *
  * @min 0.0
  * @max 0.01
@@ -484,3 +471,42 @@ PARAM_DEFINE_FLOAT(INV_ROLLRATE_I, 0.2f);
  * @group Multicopter Rate Control
  */
 PARAM_DEFINE_FLOAT(INV_ROLLRATE_D, 0.003f);
+
+/**
+ * Inverted Yaw rate P gain
+ *
+ * Inverted Yaw rate proportional gain, i.e. control output for angular speed error 1 rad/s.
+ *
+ * @min -1.0
+ * @max 0.6
+ * @decimal 2
+ * @increment 0.01
+ * @group Multicopter Rate Control
+ */
+PARAM_DEFINE_FLOAT(INV_YAWRATE_P, -0.2f);
+
+/**
+ * Inverted Yaw rate I gain
+ *
+ * Inverted Yaw rate integral gain. Can be set to compensate static thrust difference or gravity center offset.
+ *
+ * @min -1.0
+ * @decimal 2
+ * @increment 0.01
+ * @group Multicopter Rate Control
+ */
+PARAM_DEFINE_FLOAT(INV_YAWRATE_I, -0.1f);
+
+
+/**
+ * Inverted Yaw rate D gain
+ *
+ * Inverted Yaw rate differential gain. Small values help reduce fast oscillations. If value is too big oscillations will appear again.
+ *
+ * @min -1.0
+ * @decimal 2
+ * @increment 0.01
+ * @group Multicopter Rate Control
+ */
+PARAM_DEFINE_FLOAT(INV_YAWRATE_D, -0.0f);
+

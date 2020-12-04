@@ -154,9 +154,12 @@ private:
 		(ParamFloat<px4::params::MC_PITCHRATE_K>) _param_mc_pitchrate_k,
 
 		(ParamFloat<px4::params::MC_YAWRATE_P>) _param_mc_yawrate_p,
+		(ParamFloat<px4::params::INV_YAWRATE_P>) _param_inv_yawrate_p,
 		(ParamFloat<px4::params::MC_YAWRATE_I>) _param_mc_yawrate_i,
+		(ParamFloat<px4::params::INV_YAWRATE_I>) _param_inv_yawrate_i,
 		(ParamFloat<px4::params::MC_YR_INT_LIM>) _param_mc_yr_int_lim,
 		(ParamFloat<px4::params::MC_YAWRATE_D>) _param_mc_yawrate_d,
+		(ParamFloat<px4::params::INV_YAWRATE_D>) _param_inv_yawrate_d,
 		(ParamFloat<px4::params::MC_YAWRATE_FF>) _param_mc_yawrate_ff,
 		(ParamFloat<px4::params::MC_YAWRATE_K>) _param_mc_yawrate_k,
 

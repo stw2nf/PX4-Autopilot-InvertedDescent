@@ -176,12 +176,10 @@ PARAM_DEFINE_FLOAT(MC_RATT_TH, 0.8f);
  */
 PARAM_DEFINE_FLOAT(MC_MAN_TILT_TAU, 0.0f);
 
-/////////////// New Inverted Parameters ///////////////
-
 /**
  * Inverted Roll P gain
  *
- * Roll proportional gain, i.e. desired angular speed in rad/s for error 1 rad.
+ * Inverted Roll proportional gain, i.e. desired angular speed in rad/s for error 1 rad.
  *
  * @unit Hz
  * @min 0.0
@@ -195,7 +193,7 @@ PARAM_DEFINE_FLOAT(MC_INV_ROLL_P, 6.5f);
 /**
  * Inverted Pitch P gain
  *
- * Pitch proportional gain, i.e. desired angular speed in rad/s for error 1 rad.
+ * Inverted Pitch proportional gain, i.e. desired angular speed in rad/s for error 1 rad.
  *
  * @unit Hz
  * @min 0.0
@@ -205,3 +203,18 @@ PARAM_DEFINE_FLOAT(MC_INV_ROLL_P, 6.5f);
  * @group Multicopter Attitude Control
  */
 PARAM_DEFINE_FLOAT(MC_INV_PITCH_P, 6.5f);
+
+/**
+ * Inverted Yaw P gain
+ *
+ * Needs to be negative to flip error/motor commands (Opposite motors need to spin to control yaw when upside down)
+
+ *
+ * @unit Hz
+ * @min -5
+ * @max 5
+ * @decimal 2
+ * @increment 0.1
+ * @group Multicopter Attitude Control
+ */
+PARAM_DEFINE_FLOAT(MC_INV_YAW_P, -2.8f);
